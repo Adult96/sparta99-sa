@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 기본 태그 활용</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form name="form" onsubmit="{return false}">
+      First name:<br />
+      <input type="text" name="firstName" required /><br />
+      Last name:<br />
+      <input type="text" name="lastName" required /><br />
+      Email:<br />
+      <input type="email" name="email" required /><br />
+      <span
+        >Gender:
+        <input type="radio" id="male" name="gender" value="male" checked />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label> </span
+      ><br />
+      Favorite:
+      <input type="checkbox" id="html" name="html" />
+      <label for="html">HTML</label
+      ><input type="checkbox" id="java" name="java" />
+      <label for="java">JAVA</label
+      ><input type="checkbox" id="javascript" name="javascript" />
+      <label for="javascript">JavaScript</label>
+      <br />
+      <label for="browser">browser:</label>
+      <select name="browser" id="browser">
+        <option value="chrome">크롬</option>
+        <option value="safari">사파리</option>
+        <option value="explorer">익스플로러</option>
+      </select>
+      Birthday:
+      <input type="date" name="date" id="date" />
+      <br />
+      <input type="submit" onclick="{alertCheck()}" />
+    </form>
+  </body>
+
+  <script>
+    function alertCheck() {
+      const form = document.form;
+      const first = form.firstName.value;
+      const last = form.lastName.value;
+      const email = form.email.value;
+      if (!first || !last || !email) return;
+      return alert('제출 완료');
+    }
+  </script>
+</html>
